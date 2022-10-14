@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+
+<body>
+    <pre>
+
+    </pre>
+    <script>
+
+        function palindrome(str) {
+
+            let result = "";
+            str = str.toLowerCase();
+
+            for (let index = 0; index < str.length; index++) {
+                result += str[str.length - index - 1];
+            }
+
+            return result;
+        }
+
+
+        alert(palindrome(prompt("Write a word - and see how it is displayed backwards")));
+
+
+    </script>
+</body>
+
+</html>
