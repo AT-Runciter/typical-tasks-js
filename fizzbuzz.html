@@ -1,0 +1,109 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function fizzbuzz(n) {
+            for (let i = 1; i <= n; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    console.log('fizzbuzz');
+                } else if (i % 3 === 0) {
+                    console.log('fizz');
+                } else if (i % 5 === 0) {
+                    console.log('buzz');
+                } else {
+                    console.log(i);
+                }
+            }            
+        }
+        fizzbuzz(5);
+
+    </script>
+
+</body>
+
+</html>
+
+-->
+
+<!--
+Алгоритм FizzBuzz полягає у виведенні чисел від 1 до заданого значення n, але при цьому:
+
+Якщо число ділиться на 3 без залишку, замість числа виводиться "fizz".
+Якщо число ділиться на 5 без залишку, замість числа виводиться "buzz".
+Якщо число ділиться і на 3, і на 5 без залишку, замість числа виводиться "fizzbuzz".
+У цьому випадку викликається функція fizzbuzz(5), яка виводить числа від 1 до 5 згідно з правилами алгоритму FizzBuzz.
+
+У консолі не відображається "fizzbuzz(5);" тому що fizzbuzz(5); є викликом функції, і її результатом є виведення в консоль чисел і відповідних їм рядків.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .fizzbuzz {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .fizzbuzz-item {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: purple;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="fizzbuzz"></ul>
+
+    <script>
+        function fizzbuzz(n) {
+            const fizzbuzzList = document.querySelector('.fizzbuzz');
+
+            for (let i = 1; i <= n; i++) {
+                const item = document.createElement('li');
+                item.classList.add('fizzbuzz-item');
+
+                if (i % 3 === 0 && i % 5 === 0) {
+                    item.textContent = 'fizzbuzz';
+                } else if (i % 3 === 0) {
+                    item.textContent = 'fizz';
+                } else if (i % 5 === 0) {
+                    item.textContent = 'buzz';
+                } else {
+                    item.textContent = i.toString();
+                }
+
+                fizzbuzzList.appendChild(item);
+            }
+        }
+
+        fizzbuzz(5);
+    </script>
+</body>
+</html>
